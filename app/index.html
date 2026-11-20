@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Nights — Neon Noir Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="masthead">
+  <h1>LEONIDA NIGHTS</h1>
+  <p>Neon Noir Cover Studio — your photo, three panels, one poster.</p>
+</header>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <fieldset id="sizes">
+      <legend>Post size</legend>
+      <button type="button" data-size="1080x1080">Square 1080&times;1080</button>
+      <button type="button" data-size="1080x1350" class="on">Portrait 1080&times;1350</button>
+      <button type="button" data-size="1920x1080">Wide 1920&times;1080</button>
+    </fieldset>
+    <fieldset id="grades">
+      <legend>Neon grade</legend>
+      <button type="button" data-grade="neon" class="on">Neon Dusk</button>
+      <button type="button" data-grade="sunset">Sunset Gold</button>
+      <button type="button" data-grade="midnight">Midnight Teal</button>
+    </fieldset>
+    <label>Title <input id="title" type="text" maxlength="30" value="LEONIDA NIGHTS"></label>
+    <label>Subtitle <input id="subtitle" type="text" maxlength="48" value="Neon noir • Vice City"></label>
+    <label>Date line <input id="dateLine" type="text" maxlength="32" value="Leonida — 2026"></label>
+    <fieldset id="panels">
+      <legend>Panels — <span id="panelName">Hero panel</span></legend>
+      <div class="panel-tabs">
+        <button type="button" class="on">Hero</button>
+        <button type="button">Top</button>
+        <button type="button">Bottom</button>
+      </div>
+      <label>Photo for this panel <input id="photo" type="file" accept="image/*"></label>
+      <label>Zoom <input id="zoom" type="range" min="0.6" max="3" step="0.05" value="1.1"></label>
+      <label>Left–right <input id="posx" type="range" min="-1" max="1" step="0.05" value="0"></label>
+      <label>Up–down <input id="posy" type="range" min="-1" max="1" step="0.05" value="0"></label>
+      <p class="hint">Tip: drag the photo inside a panel to move it, scroll over it to zoom.</p>
+      <button id="fillAll" type="button">Fill all panels with this photo</button>
+      <button id="sampleBtn" type="button">Load a sample scene here</button>
+    </fieldset>
+  </section>
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1350" aria-label="The cover preview"></canvas>
+    <div class="export-row">
+      <button id="export" type="button">Export PNG</button>
+      <p id="status" role="status">Sample scenes loaded — pick a size, a grade, and export.</p>
+    </div>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
